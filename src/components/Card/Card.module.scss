@@ -1,0 +1,19 @@
+@import '@/styles/consts.scss';
+
+.wrapper {
+  background-color: $color-gray-bg;
+  padding: $x4 $x8;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: $x4;
+
+  &.spaced {
+    padding: $x12;
+
+    @media screen and (max-width: 960px) {
+      padding: $x6;
+    }
+  }
+}
+

@@ -1,0 +1,30 @@
+@import './colors.scss';
+@import './font.scss';
+@import './spacing.scss';
+
+.mainWrapper {
+  max-width: 1964px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 2100px) {
+    max-width: 1540px;
+  }
+
+  @media screen and (max-width: 1600px) {
+    max-width: 1200px;
+  }
+
+  @media screen and (max-width: 1300px) {
+    max-width: 1000px;
+  }
+
+  @media screen and (max-width: 960px) {
+    max-width: 500px;
+  }
+
+  @media screen and (max-width: 500px) {
+    margin: 0 $x4;
+    max-width: calc(100% - $x4 * 2);
+  }
+}
+

@@ -1,0 +1,60 @@
+@import '@/styles/consts.scss';
+
+.footer {
+  background: linear-gradient(to right, $color-blue-1 0%, $color-blue-2 100%) no-repeat;
+  color: $color-base-white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  //   @media screen and (max-width: 1700px) {
+  //     background: url('/footer-car.png') no-repeat right bottom 175px / 80% auto,
+  //       linear-gradient(to right, $color-blue-1 0%, $color-blue-2 100%) no-repeat;
+  //   }
+
+  //   @media screen and (max-width: 960px) {
+  //     background: linear-gradient(to right, $color-blue-1 0%, $color-blue-2 100%) no-repeat;
+  //   }
+}
+
+.wrapper {
+  @extend .mainWrapper;
+
+  width: 100%;
+  background: url('/footer-car.png') no-repeat right -145px bottom 65px;
+  padding-top: 152px;
+  padding-bottom: 272px;
+
+  @media screen and (max-width: 1600px) {
+    background: url('/footer-car.png') no-repeat right -95px bottom 200px / 100% auto;
+  }
+
+  @media screen and (max-width: 1300px) {
+    background: url('/footer-car.png') no-repeat right -80px bottom 200px / 100% auto;
+  }
+
+  @media screen and (max-width: 960px) {
+    background: none;
+    padding-top: $x10;
+    padding-bottom: $x10;
+
+    text-align: center;
+  }
+}
+
+.description {
+  max-width: 477px;
+  font-size: 2.8rem;
+  line-height: 4rem;
+  letter-spacing: 0.02em;
+  margin-bottom: $x12;
+}
+
+.button {
+  width: 440px;
+
+  @media screen and (max-width: 960px) {
+    width: 100%;
+  }
+}
+

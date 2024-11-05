@@ -1,0 +1,34 @@
+@import '@/styles/consts.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $x4;
+  flex: 1 1 440px;
+
+  @media screen and (max-width: 1300px) {
+    flex: 1 1 400px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.subtitle {
+  font-size: 2.8rem;
+  line-height: 4rem;
+  letter-spacing: 0.02em;
+  color: $color-gray-text;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+

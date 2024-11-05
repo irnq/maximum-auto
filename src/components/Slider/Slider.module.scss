@@ -1,0 +1,63 @@
+@import '@/styles/consts.scss';
+
+.wrapper {
+  width: 100%;
+}
+.slider {
+  margin: 0 auto;
+  width: 960px;
+  height: 719px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: $x8;
+
+  @media screen and (max-width: 1920px) {
+    width: 876px;
+  }
+
+  @media screen and (max-width: 1600px) {
+    width: 42vw;
+    height: 80%;
+  }
+
+  @media screen and (max-width: 1300px) {
+    width: 1000px;
+    height: calc(1000px / 1.5);
+  }
+
+  @media screen and (max-width: 960px) {
+    width: 500px;
+    height: 300px;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    height: calc(100vw / 2);
+  }
+}
+
+.slide {
+  transition: all 0.4s ease-out;
+  width: 100%;
+  display: flex;
+  gap: 1px;
+}
+
+.control {
+  &Block {
+    display: flex;
+    margin: 0 auto;
+    padding: 0 $x4;
+  }
+
+  flex: 1 1 40%;
+  height: 4px;
+  background-color: $color-gray-bg;
+  cursor: pointer;
+
+  &.active {
+    background-color: $color-black;
+  }
+}
+

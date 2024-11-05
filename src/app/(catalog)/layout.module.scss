@@ -1,0 +1,26 @@
+@import '@/styles/consts.scss';
+
+.main {
+  @extend .mainWrapper;
+  margin-top: spacing(20);
+  width: fit-content;
+
+  @media screen and (max-width: 1300px) {
+    margin-top: $x12;
+  }
+
+  @media screen and (max-width: 960px) {
+    margin-top: $x6;
+  }
+}
+
+.content {
+  display: flex;
+  gap: $x12;
+
+  @media screen and (max-width: 1300px) {
+    flex-direction: column;
+    gap: $x6;
+  }
+}
+

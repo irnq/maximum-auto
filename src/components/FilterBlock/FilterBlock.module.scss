@@ -1,0 +1,33 @@
+@import '@/styles/consts.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $x4;
+  border-bottom: 2px solid $color-gray-border;
+  padding-bottom: $x6;
+  padding-right: spacing(11);
+
+  @media screen and (max-width: 960px) {
+    border-bottom: none;
+    padding: 0;
+  }
+}
+
+.title {
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: $x2;
+
+  @media screen and (max-width: 960px) {
+    gap: $x1;
+  }
+}
+

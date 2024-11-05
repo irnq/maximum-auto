@@ -1,0 +1,126 @@
+@import '@/styles/consts.scss';
+
+.wrapper {
+  @extend .mainWrapper;
+
+  margin-top: spacing(16);
+  margin-bottom: 916px;
+  width: 100%;
+
+  @media screen and (max-width: 1600px) {
+    margin-bottom: 880px;
+  }
+
+  @media screen and (max-width: 960px) {
+    margin-top: $x8;
+    margin-bottom: 550px;
+  }
+
+  @media screen and (max-width: 500px) {
+    margin-bottom: 220px;
+  }
+}
+
+.header {
+  margin-bottom: spacing(16);
+
+  @media screen and (max-width: 960px) {
+    margin-bottom: $x8;
+  }
+}
+
+.subtitle {
+  color: $color-gray-text;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  gap: $x6;
+
+  @media screen and (max-width: 1300px) {
+    flex-direction: column;
+  }
+}
+
+.features {
+  flex: 1 0 626px;
+
+  p {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 960px) {
+    flex: 1 1 500px;
+  }
+}
+
+.slider {
+  flex: 1 1 876px;
+
+  .img {
+    object-position: center;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 960px) {
+    flex: 1 1 500px;
+
+    .img {
+      height: 100%;
+    }
+  }
+}
+
+.price {
+  font-family: $font-bold;
+  font-size: 3.2rem;
+  line-height: 4.2rem;
+  letter-spacing: 0.05em;
+  color: $color-primary;
+}
+
+.currency {
+  font-family: $font-roboto;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  font-size: 2.8rem;
+  line-height: 4rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+
+  .icon {
+    margin-right: $x4;
+  }
+
+  .graph {
+    margin-right: $x8;
+    margin-bottom: $base-spacing;
+
+    @media screen and (max-width: 500px) {
+      width: 25px;
+      height: 25px;
+      margin-right: $x4;
+    }
+  }
+}
+
+.mb4.mb4 {
+  margin-bottom: $x4;
+}
+
+.mb6.mb6 {
+  margin-bottom: $x6;
+}
+
+.mb12.mb12 {
+  margin-bottom: $x12;
+}
+

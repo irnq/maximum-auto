@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 42px 40px;
+  padding: 0;
+
+  @media screen and (max-width: 1300px) {
+    justify-content: center;
+  }
+}
+

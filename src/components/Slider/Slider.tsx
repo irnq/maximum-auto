@@ -31,22 +31,25 @@ export default function Slider({ children, className }: TSliderProps) {
     }
   }, []);
 
-  const wheelHandler = (event: WheelEvent) => {
-    event.preventDefault();
-    if (event.deltaY > 0) {
-      setActive((prev) => (prev + 1) % childrenCount);
-    } else {
-      setActive((prev) => (prev - 1 + childrenCount) % childrenCount);
-    }
-  };
+  const wheelHandler = useCallback(
+    (event: WheelEvent) => {
+      event.preventDefault();
+      if (event.deltaY > 0) {
+        setActive((prev) => (prev + 1) % childrenCount);
+      } else {
+        setActive((prev) => (prev - 1 + childrenCount) % childrenCount);
+      }
+    },
+    [childrenCount],
+  );
 
-  const setWheelHandler = () => {
+  const setWheelHandler = useCallback(() => {
     wrapper.current?.addEventListener('wheel', wheelHandler);
-  };
+  }, [wheelHandler]);
 
-  const removeWheelHandler = (event: MouseEvent) => {
+  const removeWheelHandler = useCallback(() => {
     wrapper.current?.removeEventListener('wheel', wheelHandler);
-  };
+  }, [wheelHandler]);
 
   useEffect(() => {
     setTimerHandler();
@@ -55,24 +58,25 @@ export default function Slider({ children, className }: TSliderProps) {
   }, [setTimerHandler, clearTimerHandler]);
 
   useEffect(() => {
-    if (wrapper.current) {
-      wrapper.current.addEventListener('mouseenter', clearTimerHandler);
-      wrapper.current.addEventListener('mouseleave', setTimerHandler);
+    const { current } = wrapper;
+    if (current) {
+      current.addEventListener('mouseenter', clearTimerHandler);
+      current.addEventListener('mouseleave', setTimerHandler);
 
-      wrapper.current.addEventListener('mouseenter', setWheelHandler);
-      wrapper.current.addEventListener('mouseleave', removeWheelHandler);
+      current.addEventListener('mouseenter', setWheelHandler);
+      current.addEventListener('mouseleave', removeWheelHandler);
     }
 
     return () => {
-      if (wrapper.current) {
-        wrapper.current.removeEventListener('mouseenter', clearTimerHandler);
-        wrapper.current.removeEventListener('mouseleave', setTimerHandler);
+      if (current) {
+        current.removeEventListener('mouseenter', clearTimerHandler);
+        current.removeEventListener('mouseleave', setTimerHandler);
 
-        wrapper.current.removeEventListener('mouseenter', setWheelHandler);
-        wrapper.current.removeEventListener('mouseleave', removeWheelHandler);
+        current.removeEventListener('mouseenter', setWheelHandler);
+        current.removeEventListener('mouseleave', removeWheelHandler);
       }
     };
-  }, [setTimerHandler, clearTimerHandler]);
+  }, [setTimerHandler, clearTimerHandler, removeWheelHandler, setWheelHandler]);
 
   useEffect(() => {
     if (slide.current) {

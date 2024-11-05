@@ -23,17 +23,16 @@ export default function CatalogList({ carList }: TCatalogListProps) {
       : null;
   }, [searchParams]);
 
-  const filteredList = useMemo(() => {
-    let filtered = [...carList];
-    if (engineFilter) {
-      filtered = filtered.filter((car) => car.EngineSize === engineFilter);
-    }
-    if (complectationFilter) {
-      filtered = filtered.filter((car) => car.Complectation === complectationFilter);
-    }
+  const filteredList = useMemo(
+    () =>
+      carList.filter(
+        (car) =>
+          (engineFilter ? car.EngineSize === engineFilter : true) &&
+          (complectationFilter ? car.Complectation === complectationFilter : true),
+      ),
+    [carList, engineFilter, complectationFilter],
+  );
 
-    return filtered;
-  }, [carList, engineFilter, complectationFilter]);
   return (
     <ul className={css.wrapper}>
       {filteredList.map((car) => (

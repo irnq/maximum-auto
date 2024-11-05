@@ -22,7 +22,6 @@ export default function SideFilter() {
     engine: searchParams.get(FilterKey.ENGINE) ? Number(searchParams.get(FilterKey.ENGINE)) : null,
   });
   const [width, setWidth] = useState(0);
-  console.log('width: ', width);
 
   useEffect(() => {
     const observer = new ResizeObserver((entries) => {
